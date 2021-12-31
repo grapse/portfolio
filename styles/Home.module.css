@@ -1,0 +1,51 @@
+.sidebar{
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #fafaff;
+    box-shadow: 0px 0px 2px -1px #000;
+    padding:25px;
+
+    
+}
+
+.profileElement{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.profileTwitter{
+    
+}
+
+.profileTitle{
+    font-size: 1.5rem;
+}
+
+.profileText{
+    font-size: 0.7rem;
+}
+.profileLink{
+    font-size: 1rem;
+}
+
+.profileImage{
+    width:50%;
+    margin:auto;
+    padding:0%;
+    border-radius: 4px;
+    border:1px solid #000;
+    
+}
+
+.content{
+    margin-left: 25%;
+    padding: 50px;
+}

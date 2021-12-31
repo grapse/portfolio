@@ -12,7 +12,7 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          GrapeDraws
+          Commissions
         </h1>
 
       
