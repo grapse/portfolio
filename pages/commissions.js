@@ -37,7 +37,6 @@ const displayGalleries= [<div className={styles.commissionTerms} >
                           <Link  href={'/portfolio/portraits'}><a>here</a></Link>.
                           
                           </div>
-                          <ExpressionSheet imgdata={portraitImages} thumbs={portraitThumbs} bonus={bonus}/>
                           <div className={styles.chibi}>
                               <div className={styles.chibiCard}>
                                   <div>{chibi1}</div>
