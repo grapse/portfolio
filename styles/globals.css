@@ -3,6 +3,7 @@ body {
   scroll-behavior: smooth;
   padding: 0;
   margin: 0;
+  background-color: #000;
   font-family: 'Noto Sans JP', 'Titillium Web', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -12,25 +13,24 @@ a {
   text-decoration: none;
 }
 a:link {
-  color: #0050c3;
+  color: #000;
   background-color: transparent;
   text-decoration: none;
 }
 
 a:visited {
-  color: #0030a3;
+  color: #000;
   background-color: transparent;
   text-decoration: none;
 }
 
 a:hover {
-  color: #8090f3;
+  color: #000;
   background-color: transparent;
-  text-decoration: underline;
 }
 
 hr{
-    border: 0.3px solid #cfcfcf;
+    border: 0.3px solid #000;
     
    
 }

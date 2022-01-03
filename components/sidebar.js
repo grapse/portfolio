@@ -1,16 +1,14 @@
 import styles from '../styles/Home.module.css'
 import React from 'react'
 import Link from 'next/link'
-import { DefaultButton, Image, ImageFit } from '@fluentui/react';
-import { TwitterFollowButton } from 'react-twitter-embed';
+import { Image, ImageFit } from '@fluentui/react';
 const CustomImage = ({...props}) => {
     return <Image {...props} imageFit={ImageFit.contain}/>
 }
 
 const introMessage = "Hi! I'm a software developer who likes to draw from time to time. You can find samples of my work as well as commission prices here."
 
-class Sidebar extends React.Component {
-  render() {
+function Sidebar({current}){
     return (      
     <div className={styles.sidebar}>
         <br/>
@@ -22,39 +20,33 @@ class Sidebar extends React.Component {
         />
         </div>
         <div className={styles.profileElement + ' ' + styles.profileTitle}>
-            grape
-        </div>
-        <div className={styles.profileElement + ' ' + styles.profileTwitter}>
-            <TwitterFollowButton
-            screenName={'grape______'}
-            placeholder="Loading"
-            options={{size:'small', showScreenName:'false'}}
-        />
+            
         </div>
         <div className={styles.profileElement + ' ' + styles.profileText}>
-            {introMessage}
+            {""}
         </div>
-        <div className={styles.profileElement + ' ' + styles.profileLink}>
+        <br/>
+        <div className={styles.profileElement + ' ' + (current == 'home' ? styles.profileLinkCurrent : styles.profileLink)}>
             <Link href="/">
-                <a>Home</a>
+                <a>HOME</a>
             </Link>
         </div>
         <hr className={styles.profileElement}/>
-        <div className={styles.profileElement + ' ' + styles.profileLink}>
+        <div className={styles.profileElement + ' ' + (current == 'portfolio' ? styles.profileLinkCurrent : styles.profileLink)}>
             <Link href="/portfolio">
-                <a>Artwork</a>
+                <a>ARTWORK</a>
             </Link>
         </div>
         <hr className={styles.profileElement}/>
-        <div className={styles.profileElement + ' ' + styles.profileLink}>
+        <div className={styles.profileElement + ' ' + (current == 'commissions' ? styles.profileLinkCurrent : styles.profileLink)}>
             <Link href="/commissions">
-                <a>Commissions</a>
+                <a>COMMISSIONS</a>
             </Link>
         </div>
         <hr className={styles.profileElement}/>
-        <div className={styles.profileElement + ' ' + styles.profileLink}>
-            <Link href="/merchandise">
-                <a>Merchandise</a>
+        <div className={styles.profileElement + ' ' + (current == 'about' ? styles.profileLinkCurrent : styles.profileLink)}>
+            <Link href="/about">
+                <a>ABOUT</a>
             </Link>
         </div>
         
@@ -62,7 +54,6 @@ class Sidebar extends React.Component {
         
     </div>)
     ;
-  }
 }
 
 
