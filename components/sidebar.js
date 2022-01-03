@@ -1,10 +1,7 @@
 import styles from '../styles/Home.module.css'
 import React from 'react'
 import Link from 'next/link'
-import { Image, ImageFit } from '@fluentui/react';
-const CustomImage = ({...props}) => {
-    return <Image {...props} imageFit={ImageFit.contain}/>
-}
+import Image from 'next/image'
 
 const introMessage = "Hi! I'm a software developer who likes to draw from time to time. You can find samples of my work as well as commission prices here."
 
@@ -12,10 +9,12 @@ function Sidebar({current}){
     return (      
     <div className={styles.sidebar}>
         <br/>
-        <div >
-        <CustomImage
+        <div className={styles.profileHolder}>
+        <Image
             className={styles.profileImage}
             src="/images/grape.png"
+            width={300}
+            height={300}
             alt="grape"
         />
         </div>
