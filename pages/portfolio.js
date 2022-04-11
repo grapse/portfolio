@@ -5,7 +5,7 @@ import DefaultHead from '../components/customheader'
 import ArtGallery from '../components/artgallery'
 import PortraitGallery from '../components/portraitgallery'
 import React from 'react'
-const basicImages = ['kawanakajima','ayaka',
+const basicImages = ['kawanakajima','ayaka','ayato','hatsumode',
                      'beidou','commission2','eula','teahouse','semiramis',
                      'crane','cryo','dantes',
                      'guda6','kagetora','mountain','amakusa',

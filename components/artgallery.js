@@ -27,7 +27,7 @@ function ArtGallery({imgdata}){
 
     >   
         <div class={styles.imgFit}>
-            <Image src={curImage >= 0 ? imgdata[curImage] : ''} alt={"Expanded Image"} height={"95vh"}/>
+            <Image src={curImage >= 0 ? imgdata[curImage] : ''} imageFit={ImageFit.contain} alt={"Expanded Image"} height={"95vh"}/>
         </div>
     </Modal>
     </>)

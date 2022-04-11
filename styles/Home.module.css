@@ -1,5 +1,6 @@
 .centerText{
     text-align: center;
+    color: white;
 }
 
 .sidebar{
@@ -10,11 +11,12 @@
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: rgba(126,196,230,0.8);
-    background: linear-gradient(180deg, rgba(37,20,171,0.8) 0%, rgba(106,242,247,0.8) 50%, rgba(185,251,242,0.8) 81%, rgba(255,193,183,0.8) 100%);
+    background-color: rgba(126,196,230,0.5);
+    background: linear-gradient(180deg, rgba(37,20,171,0.5) 0%, rgba(106,242,247,0.8) 50%, rgba(185,251,242,0.8) 81%, rgba(255,193,183,0.8) 100%);
     box-shadow: 0px 0px 2px -1px #000;
     padding:2.5vw;
     z-index: 30;
+    backdrop-filter: blur(12px);
     
 }
 
@@ -32,11 +34,26 @@
     margin:auto;
     width:100%;
 }
+.text a{
+    text-decoration: underline;
+    color: rgba(106,242,247,1);
+}
+.linear{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+}
 .title{
     cursor: pointer;
     font-size: 2rem;
     margin: 10px 30px 30px 30px;
     color:#000;
+}
+.text{
+    color:#fff;
+    white-space: pre-line;
 }
 .titleEnabled{
     background-color: rgba(106,242,247,1);

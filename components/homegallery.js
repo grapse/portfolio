@@ -79,13 +79,10 @@ function HomeGallery({imgdata}){
                                     />
                             </div>
                         </div>    
-                    ); 
-                
-                })
+                        ); 
+                    })
                 }
             </div>
-            
-            
     </div>
     )
     

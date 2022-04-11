@@ -43,14 +43,17 @@ function Sidebar({current}){
             </Link>
         </div>
         <hr className={styles.profileElement}/>
+        <div className={styles.profileElement + ' ' + (current == 'merch' ? styles.profileLinkCurrent : styles.profileLink)}>
+            <Link href="/merch">
+                <a>MERCHANDISE</a>
+            </Link>
+        </div>
+        <hr className={styles.profileElement}/>
         <div className={styles.profileElement + ' ' + (current == 'about' ? styles.profileLinkCurrent : styles.profileLink)}>
             <Link href="/about">
                 <a>ABOUT</a>
             </Link>
         </div>
-        
-        
-        
     </div>)
     ;
 }

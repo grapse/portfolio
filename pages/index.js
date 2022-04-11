@@ -5,7 +5,7 @@ import DefaultHead from '../components/customheader'
 import {Image, ImageFit} from '@fluentui/react/lib-commonjs'
 import HomeGallery from '../components/homegallery'
 
-const backgroundImages = ['eee.webp', 'cryo.png', 'bbq.png', 'bg.webp', 'guda6.png','p.png'].map((v) => `/images/home/${v}`);
+const backgroundImages = ['eee.webp', 'cryo.png', 'hatsumode.webp', 'bg.webp', 'guda6.png','p.png'].map((v) => `/images/home/${v}`);
 // /images/home/${}.webp
 
 
