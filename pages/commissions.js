@@ -49,7 +49,7 @@ const displayGalleries= [<div className={styles.commissionTerms} >
                                   
                               </div>
                           </div>
-                          <div>{final}</div>
+                          <div className={styles.commText}>{final}</div>
                         </div>,
                         <div className={styles.commissionTerms}>{commissionTerms}</div>,
                         <div className={styles.commissionTerms}><div className={styles.commissionBoxStatus + ' ' + styles.commissionBullet}>{status}</div></div>];
@@ -77,25 +77,25 @@ function CommSheet(){
 
 export default function Home() {
   const [display, setDisplay] = React.useState(0);
+  const [sidebar, setSidebar] = React.useState(true);
   
   return (
-    <>
-    <Sidebar current={"commissions"}/>
-    <div className={styles.contentComm}>
-      <DefaultHead/>
+    <div className={styles.pageHolder}>
+      <Sidebar current={"commissions"} setShow={setSidebar} show={sidebar}/>
+      <div style={{"--sidebar":sidebar ? "25vw" : "50px"}} className={styles.contentComm}>
+        <DefaultHead/>
+        <main >
+        <div className={styles.titles}>
+            {displayNames.map((v,i) => {
+              return <span key={v} onClick={() => setDisplay(i)} className={styles.title + " " + (display == i ? styles.titleEnabled : styles.titleDisabled)}>{v}</span>
+            })}
+          </div>
 
-      <main >
-      <div className={styles.titles}>
-          {displayNames.map((v,i) => {
-            return <span key={v} onClick={() => setDisplay(i)} className={styles.title + " " + (display == i ? styles.titleEnabled : styles.titleDisabled)}>{v}</span>
-          })}
-        </div>
-
-        {displayGalleries[display]}
-      </main>
+          {displayGalleries[display]}
+        </main>
 
   
     </div>
-  </>
+  </div>
   )
 }

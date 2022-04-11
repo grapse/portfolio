@@ -4,8 +4,6 @@
 }
 
 .sidebar{
-    margin: 0;
-    padding: 0;
     width: 25vw;
     position: fixed;
     height: 100%;
@@ -14,17 +12,77 @@
     background-color: rgba(126,196,230,0.5);
     background: linear-gradient(180deg, rgba(37,20,171,0.5) 0%, rgba(106,242,247,0.8) 50%, rgba(185,251,242,0.8) 81%, rgba(255,193,183,0.8) 100%);
     box-shadow: 0px 0px 2px -1px #000;
-    padding:2.5vw;
+    padding:20px;
+    padding-top: 50px;
     z-index: 30;
     backdrop-filter: blur(12px);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
     
 }
 
+.closeButton{
+    stroke: #fff;
+    stroke-width: 3; 
+    position: absolute;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.closeButton:hover{
+    transform: rotate(180deg);
+}
+.iconHolder{
+    display:flex;
+    gap: 10px;
+    color: white;
+    font-size: 2em;
+}
+.iconHoldercol{
+    flex-direction: column;
+    position: fixed;
+    z-index: 100;
+    padding: 10px;
+    align-items: center;
+}
+.iconHolder a{
+    color: white;
+    text-decoration: none;
+}
+.openButton{
+    stroke: #fff;
+    stroke-width: 3; 
+    position: absolute;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.openButton:hover{
+    transform: translate(5px, 0);
+}
+
+.svgHolder{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    align-self: flex-end;
+}
+.svgHolder2{
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+@media only screen and (max-width: 650px) {
+    .sidebar {
+      margin: auto;
+      width: 100%;
+      padding-top: 20px;
+    }
+   
+  }
 .profileElement{
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: 15px;
-    margin-bottom: 10px;
     text-align: center;
 }
 .titles{
@@ -33,6 +91,7 @@
     flex-wrap: wrap;
     margin:auto;
     width:100%;
+
 }
 .text a{
     text-decoration: underline;
@@ -47,8 +106,9 @@
 }
 .title{
     cursor: pointer;
-    font-size: 2rem;
     margin: 10px 30px 30px 30px;
+    font-size: clamp(20px, 2.5vw, 50px);
+
     color:#000;
 }
 .text{
@@ -102,8 +162,8 @@
 }
 
 .profileImage{
-    width:300px;
-    height:300px;
+    width:100px;
+    height:100px;
     
     padding:0%;
     border-radius: 4px;
@@ -111,16 +171,30 @@
 }
 
 .content{
-    margin-left: 25vw;
-    padding: 50px;
+    padding: 20px;
+    margin-left: var(--sidebar);
 }
 
+.pageHolder{
+    display: flex;
+    flex-direction: row;
+}
 .contentComm{
-    margin-left: 25vw;
-    padding: 50px;
+    margin-left: var(--sidebar);
+    padding: 20px;
     overflow-x:hidden;
     height:100vh;
 }
+
+@media only screen and (max-width: 650px) {
+    .contentComm {
+      margin-left: 50px;
+    }
+    .content {
+        margin-left: 50px;
+    }
+   
+  }
 
 .contentBg{
     object-fit: cover;
@@ -313,13 +387,19 @@
     background-color: rgba(106,242,247,1);
     border:2px solid rgba(106,242,247,1);
 }
+.portraitThumbs{
+    width: clamp(50px, 15vw, 120px);
+}
 .chibi{
     display: flex;
     flex-direction: row;
+    flex-wrap:wrap;
+    justify-content:center;
 }
 .chibiCard{
-    width:50%;
-    padding: 25px;
+    font-size: clamp(10px, 1.5vw, 30px);
+    width:min(400px, 90%);
+    padding: 15px;
 }
 .portraitGalleryFull{
     width:40%;
@@ -404,12 +484,17 @@
 }
 .imageHolder{
     position: relative;
-  width: 75%;
+  width: min(700px, 100%);
   margin:auto;
 }
 .commLink{
     margin-top: 40px;
+    font-size: clamp(10px, 1.5vw, 30px);
     margin-bottom: 40px;
+}
+.commText{
+    font-size: clamp(10px, 1.5vw, 30px);
+
 }
 .commLink a{
     color:rgba(106,242,247,1);

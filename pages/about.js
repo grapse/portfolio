@@ -10,10 +10,12 @@ const displayGalleries= [<div className={styles.about}>{description}</div>,];
 
 export default function Home() {
   const [display, setDisplay] = React.useState(0);
+  const [sidebar, setSidebar] = React.useState(true);
+
   return (
     <>
-        <Sidebar current={"about"}/>
-        <div className={styles.contentComm}>
+        <Sidebar current={"about"} setShow={setSidebar} show={sidebar}/>
+        <div style={{"--sidebar":sidebar ? "25vw" : "50px"}} className={styles.contentComm}>
         <DefaultHead/>
         <main >
             {displayGalleries[display]}

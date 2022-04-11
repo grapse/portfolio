@@ -13,8 +13,8 @@ function PortraitGallery({imgdata,thumbs}){
             <div className={styles.portraitGalleryThumbs}>
             {thumbs.map((v,i) => {
                 return( 
-                    <div key={i} onClick={() => setCurImage(i)}>
-                        <CustomImage className={styles.portraitThumb + ' ' + (curImage == i ? styles.portraitThumbSelected : '')} width={100} height={75} src={v} />
+                    <div key={i} onClick={() => setCurImage(i)} className={styles.portraitThumbs}>
+                        <CustomImage className={styles.portraitThumb + ' ' + (curImage == i ? styles.portraitThumbSelected : '')} src={v} />
                     </div>
                     )
             })}

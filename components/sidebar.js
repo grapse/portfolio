@@ -2,60 +2,74 @@ import styles from '../styles/Home.module.css'
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import "bootstrap-icons/font/bootstrap-icons.css";
 
-const introMessage = "Hi! I'm a software developer who likes to draw from time to time. You can find samples of my work as well as commission prices here."
+function Sidebar({current, show, setShow}){
 
-function Sidebar({current}){
-    return (      
+    return (   
+        show ?   
     <div className={styles.sidebar}>
-        <br/>
-        <div className={styles.profileHolder}>
-        <Image
+        <div className={styles.svgHolder} onClick={() => setShow(!show)}>
+            <svg height="100%" viewBox="0 0 100 100" className={styles.closeButton}>
+                <line x1="0" y1="0" x2="100" y2="100" />
+                <line x1="100" y1="0" x2="0" y2="100" />
+            </svg>
+        </div>
+        <img
             className={styles.profileImage}
             src="/images/grape.png"
-            width={300}
-            height={300}
             alt="grape"
         />
-        </div>
-        <div className={styles.profileElement + ' ' + styles.profileTitle}>
-            
-        </div>
         <div className={styles.profileElement + ' ' + styles.profileText}>
             {""}
         </div>
-        <br/>
+        <div className={styles.profileElement + ' ' + styles.iconHolder}>
+            <a class="bi bi-cart" href={"https://www.etsy.com/ca/shop/grapeDraws"} target="_blank" rel="noopener noreferrer"></a>
+            <a class="bi bi-twitter" href={"https://twitter.com/grape______"} target="_blank" rel="noopener noreferrer"></a>
+            <a class="bi bi-envelope-fill" href="mailto:grape0art@gmail.com"></a>
+        </div>
         <div className={styles.profileElement + ' ' + (current == 'home' ? styles.profileLinkCurrent : styles.profileLink)}>
             <Link href="/">
                 <a>HOME</a>
             </Link>
         </div>
-        <hr className={styles.profileElement}/>
         <div className={styles.profileElement + ' ' + (current == 'portfolio' ? styles.profileLinkCurrent : styles.profileLink)}>
             <Link href="/portfolio">
                 <a>ARTWORK</a>
             </Link>
         </div>
-        <hr className={styles.profileElement}/>
         <div className={styles.profileElement + ' ' + (current == 'commissions' ? styles.profileLinkCurrent : styles.profileLink)}>
             <Link href="/commissions">
                 <a>COMMISSIONS</a>
             </Link>
         </div>
-        <hr className={styles.profileElement}/>
         <div className={styles.profileElement + ' ' + (current == 'merch' ? styles.profileLinkCurrent : styles.profileLink)}>
             <Link href="/merch">
                 <a>MERCHANDISE</a>
             </Link>
         </div>
-        <hr className={styles.profileElement}/>
         <div className={styles.profileElement + ' ' + (current == 'about' ? styles.profileLinkCurrent : styles.profileLink)}>
             <Link href="/about">
                 <a>ABOUT</a>
             </Link>
         </div>
-    </div>)
-    ;
+    </div>
+    :
+    <div className={`${styles.iconHolder} ${styles.iconHoldercol}`}>
+        
+        <div className={styles.svgHolder2} onClick={() => setShow(!show)}>
+            <svg height="100%" viewBox="0 0 100 100" className={styles.openButton}>
+                <line x1="0" y1="25" x2="100" y2="25" />
+                <line x1="0" y1="50" x2="100" y2="50" />
+                <line x1="0" y1="75" x2="100" y2="75" />
+            </svg>
+        </div>
+            <a class="bi bi-cart" href={"https://www.etsy.com/ca/shop/grapeDraws"} target="_blank" rel="noopener noreferrer"></a>
+            <a class="bi bi-twitter" href={"https://twitter.com/grape______"} target="_blank" rel="noopener noreferrer"></a>
+            <a class="bi bi-envelope-fill" href="mailto:grape0art@gmail.com"></a>
+    </div>
+    
+    );
 }
 
 

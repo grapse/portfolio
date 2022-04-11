@@ -32,11 +32,12 @@ const displayGalleries= [<ArtGallery imgdata={basicImages}/>,
 
 export default function Home() {
   const [display, setDisplay] = React.useState(0);
+  const [sidebar, setSidebar] = React.useState(true);
 
   return (
     <>
-    <Sidebar current={"portfolio"}/>
-    <div className={styles.content}>
+    <Sidebar current={"portfolio"} setShow={setSidebar} show={sidebar}/>
+    <div style={{"--sidebar":sidebar ? "25vw" : "50px"}} className={styles.content}>
       <DefaultHead/>
 
       <main>

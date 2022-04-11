@@ -19,11 +19,12 @@ const CustomImage = ({...props}) => {
 
 export default function Home() {
   const [display, setDisplay] = React.useState(0);
+  const [sidebar, setSidebar] = React.useState(true);
   
   return (
     <>
-    <Sidebar current={"merch"}/>
-    <div className={styles.contentComm}>
+    <Sidebar current={"merch"} setShow={setSidebar} show={sidebar}/>
+    <div style={{"--sidebar":sidebar ? "25vw" : "50px"}} className={styles.contentComm}>
         <DefaultHead/>
         <main >
         <div className={styles.text}>{description}<a className={styles.customlink} href={"https://www.etsy.com/ca/shop/grapeDraws"} target="_blank" rel="noopener noreferrer">{"Etsy"}</a>{description2}</div>
