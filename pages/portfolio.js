@@ -10,16 +10,16 @@ const basicImages = ['kawanakajima','ayaka','ayato','hatsumode',
                      'crane','cryo','dantes',
                      'guda6','kagetora','mountain','amakusa',
                      'kazuha','kokomi','magia','minaka',
-                     'okita','p','santa','comm','bbq',
+                     'okita','p','comm','bbq',
                      ].map(v => `/images/gallery/${v}.png`);
-const portraits = ['nobunaga','motonari','kagetora','hideyoshi',
+const portraits = ['nobunaga','motonari','kagetora','hideyoshi','ryuu','naomi','aderes','shin','terpischore',
                    'vindamia','shouko','shingen','mitsunari','ieyasu','naomasa',
                    'clisson','kanetsugu','comm_ffxiv','mei',
                    'kama','kagami','gladiator','librarian','producer2','penth2','okitan',
                   'kameju','kirsch','masakado','matabei','merlin','cassandra',
                   'bonnie','commodus','clyde',
                   'mori','raguel','rockefeller','ishaq',
-                  'sakuya','shin','shingen_idol','terpischore','vohu','yamatohime',
+                  'sakuya','shingen_idol','vohu','yamatohime',
                   'hikotsuruhime','curie','aeneas','earhart'
                   ];
 const portraitImages = portraits.map(v => `/images/portraits/${v}.png`);

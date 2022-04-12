@@ -14,7 +14,7 @@ function ArtGallery({imgdata}){
         {imgdata.map((v,i) => {
             return( 
                 <div key={i} className={styles.artGalleryItem} onClick={() => setCurImage(i)}>
-                    <CustomImage src={v} height={200}/>
+                        <CustomImage src={v} height={200}/>
                 </div>
                   )
         })}

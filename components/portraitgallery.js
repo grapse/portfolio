@@ -9,6 +9,9 @@ function PortraitGallery({imgdata,thumbs}){
     const [curImage, setCurImage] = React.useState(0);
     return (     
     <div className={styles.portraitGallery}> 
+        <div className={styles.portraitGalleryFull}>
+            <CustomImage height={"95vh"} src={imgdata[curImage]}/>
+        </div>
         <div class={styles.portraitGalleryAlign}>
             <div className={styles.portraitGalleryThumbs}>
             {thumbs.map((v,i) => {
@@ -21,9 +24,7 @@ function PortraitGallery({imgdata,thumbs}){
         </div>
         </div>
         
-        <div className={styles.portraitGalleryFull}>
-            <CustomImage height={"95vh"} src={imgdata[curImage]}/>
-        </div>
+        
     </div>)
     ;
 }

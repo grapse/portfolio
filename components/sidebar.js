@@ -7,8 +7,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 function Sidebar({current, show, setShow}){
 
     return (   
-        show ?   
-    <div className={styles.sidebar}>
+        <>
+    <div style={{"--marginleft":show ? 0 : "-100%"}} className={styles.sidebar}>
         <div className={styles.svgHolder} onClick={() => setShow(!show)}>
             <svg height="100%" viewBox="0 0 100 100" className={styles.closeButton}>
                 <line x1="0" y1="0" x2="100" y2="100" />
@@ -24,9 +24,9 @@ function Sidebar({current, show, setShow}){
             {""}
         </div>
         <div className={styles.profileElement + ' ' + styles.iconHolder}>
-            <a class="bi bi-cart" href={"https://www.etsy.com/ca/shop/grapeDraws"} target="_blank" rel="noopener noreferrer"></a>
-            <a class="bi bi-twitter" href={"https://twitter.com/grape______"} target="_blank" rel="noopener noreferrer"></a>
-            <a class="bi bi-envelope-fill" href="mailto:grape0art@gmail.com"></a>
+            <a className={`${styles.iconholderitem} bi bi-cart`} href={"https://www.etsy.com/ca/shop/grapeDraws"} target="_blank" rel="noopener noreferrer"></a>
+            <a className={`${styles.iconholderitem} bi bi-twitter`} href={"https://twitter.com/grape______"} target="_blank" rel="noopener noreferrer"></a>
+            <a className={`${styles.iconholderitem} bi bi-envelope-fill`} href="mailto:grape0art@gmail.com"></a>
         </div>
         <div className={styles.profileElement + ' ' + (current == 'home' ? styles.profileLinkCurrent : styles.profileLink)}>
             <Link href="/">
@@ -54,21 +54,19 @@ function Sidebar({current, show, setShow}){
             </Link>
         </div>
     </div>
-    :
     <div className={`${styles.iconHolder} ${styles.iconHoldercol}`}>
-        
-        <div className={styles.svgHolder2} onClick={() => setShow(!show)}>
+        <div style={{ "--offset": show ? "-300%" : 0}} className={styles.svgHolder2 + " " + styles.iconitem} onClick={() => setShow(!show)}>
             <svg height="100%" viewBox="0 0 100 100" className={styles.openButton}>
                 <line x1="0" y1="25" x2="100" y2="25" />
                 <line x1="0" y1="50" x2="100" y2="50" />
                 <line x1="0" y1="75" x2="100" y2="75" />
             </svg>
         </div>
-            <a class="bi bi-cart" href={"https://www.etsy.com/ca/shop/grapeDraws"} target="_blank" rel="noopener noreferrer"></a>
-            <a class="bi bi-twitter" href={"https://twitter.com/grape______"} target="_blank" rel="noopener noreferrer"></a>
-            <a class="bi bi-envelope-fill" href="mailto:grape0art@gmail.com"></a>
+        <a style={{ "--offset": show ? "-400%" : 0}} className={`${styles.iconitem} bi bi-cart`} href={"https://www.etsy.com/ca/shop/grapeDraws"} target="_blank" rel="noopener noreferrer"></a>
+        <a style={{ "--offset": show ? "-500%" : 0}} className={`${styles.iconitem} bi bi-twitter`} href={"https://twitter.com/grape______"} target="_blank" rel="noopener noreferrer"></a>
+        <a style={{ "--offset": show ? "-600%" : 0}} className={`${styles.iconitem} bi bi-envelope-fill`} href="mailto:grape0art@gmail.com"></a>
     </div>
-    
+    </>
     );
 }
 

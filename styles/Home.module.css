@@ -20,7 +20,8 @@
     flex-direction: column;
     align-items: center;
     gap: 25px;
-    
+    left: var(--marginleft);
+    transition: 0.5s ease-in-out;
 }
 
 .closeButton{
@@ -46,6 +47,13 @@
     padding: 10px;
     align-items: center;
 }
+.iconitem{
+    margin-left: var(--offset);
+    transition: 0.5s ease-in-out;
+}
+.iconitem:hover{
+    transform: translateX(10px);
+}
 .iconHolder a{
     color: white;
     text-decoration: none;
@@ -56,9 +64,6 @@
     position: absolute;
     cursor: pointer;
     transition: 0.3s ease-in-out;
-}
-.openButton:hover{
-    transform: translate(5px, 0);
 }
 
 .svgHolder{
@@ -173,6 +178,7 @@
 .content{
     padding: 20px;
     margin-left: var(--sidebar);
+    transition: margin 0.5s ease-in-out;
 }
 
 .pageHolder{
@@ -183,6 +189,7 @@
     margin-left: var(--sidebar);
     padding: 20px;
     overflow-x:hidden;
+    transition: margin 0.5s ease-in-out;
     height:100vh;
 }
 
@@ -293,7 +300,6 @@
     border:2px solid #000;
     animation: fadein 0.3s cubic-bezier(.1,.9,.2,1);
 }
-
 .artGalleryItem:hover{
     transition: 0.4s;
     cursor: pointer;
@@ -319,11 +325,12 @@
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .portraitGalleryAlign{
-    width:50%;
-    margin-right: 10%;
+    width: min(100%, 350px);
+    margin-left: 10%;
 }
 .portraitGalleryAlignExp{
     width:15%;
@@ -388,7 +395,7 @@
     border:2px solid rgba(106,242,247,1);
 }
 .portraitThumbs{
-    width: clamp(50px, 15vw, 120px);
+    width: clamp(50px, 15vw, 110px);
 }
 .chibi{
     display: flex;
@@ -402,9 +409,15 @@
     padding: 15px;
 }
 .portraitGalleryFull{
-    width:40%;
     height:95vh;
+    min-width: 50%;
     
+}
+.iconholderitem{
+    transition: 0.2s ease-in-out;
+}
+.iconholderitem:hover{
+    transform:translateY(-5px);
 }
 .portraitText{
     width:40%;
