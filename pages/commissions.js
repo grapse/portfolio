@@ -34,7 +34,7 @@ const displayGalleries= [<div className={styles.commissionTerms} >
                           <div className={styles.commissionExtra}>{commExtras}</div>
                           <CommSheet/>
                           <div className={styles.commLink}>I can work in a variety of styles. Some more samples can be found&nbsp;
-                          <Link  href={'/portfolio/portraits'}><a>here</a></Link>.
+                          <Link  href={'/portfolio?tab=1'}><a>here</a></Link>.
                           
                           </div>
                           <div className={styles.chibi}>
@@ -78,6 +78,14 @@ function CommSheet(){
 export default function Home() {
   const [display, setDisplay] = React.useState(0);
   const [sidebar, setSidebar] = React.useState(true);
+  React.useEffect(() => {
+    let search = window.location.search;
+    let params = new URLSearchParams(search);
+    let currentTab = params.get('tab');
+    if(currentTab){
+      setDisplay(parseInt(currentTab));
+    }
+  },[])
   
   return (
     <div className={styles.pageHolder}>

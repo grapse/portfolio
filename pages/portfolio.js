@@ -34,6 +34,15 @@ export default function Home() {
   const [display, setDisplay] = React.useState(0);
   const [sidebar, setSidebar] = React.useState(true);
 
+  React.useEffect(() => {
+    let search = window.location.search;
+    let params = new URLSearchParams(search);
+    let currentTab = params.get('tab');
+    if(currentTab){
+      setDisplay(parseInt(currentTab));
+    }
+  },[])
+
   return (
     <>
     <Sidebar current={"portfolio"} setShow={setSidebar} show={sidebar}/>
